@@ -6,8 +6,96 @@
     <meta name="theme-color" content="#06100b" />
     <link rel="icon" type="image/png" href="/Kriptta-Downloads/app/favicon.png" />
     <title>Kriptta</title>
-    <script type="module" crossorigin src="/Kriptta-Downloads/app/assets/index-AuthRecovery-20261025.js"></script>
+    <script type="module" crossorigin src="/Kriptta-Downloads/app/assets/index-MobileVoiceHotfix-20261027.js"></script>
     <link rel="stylesheet" crossorigin href="/Kriptta-Downloads/app/assets/index-DFkKBxU8.css">
+  
+    <style id="kriptta-mobile-voice-hotfix">
+      @media (max-width: 760px) {
+        .app-shell.is-voice-view {
+          grid-template-rows: 54px 64px minmax(0, 1fr);
+          height: 100dvh;
+          min-height: 0;
+          overflow: hidden;
+        }
+        .app-shell.is-voice-view .channel-sidebar { overflow: hidden; }
+        .app-shell.is-voice-view .server-header,
+        .app-shell.is-voice-view .channel-scroll,
+        .app-shell.is-voice-view .home-sidebar-copy { display: none; }
+        .app-shell.is-voice-view .user-panel { min-height: 0; height: 100%; }
+        .app-shell.is-voice-view .main-panel {
+          grid-row: 3;
+          min-height: 0;
+          height: 100%;
+          overflow: hidden;
+        }
+        .app-shell.is-voice-view .voice-connection-shell.visible {
+          height: 100%;
+          min-height: 0;
+          overflow: hidden;
+        }
+        .app-shell.is-voice-view .real-voice {
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+          flex: 1 1 auto;
+          padding: 0;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .app-shell.is-voice-view .voice-stage-header {
+          min-height: 48px;
+          height: auto;
+          padding: 10px 12px;
+        }
+        .app-shell.is-voice-view .voice-toolbar {
+          flex: 0 0 auto;
+          margin-top: auto;
+          padding-bottom: max(12px, env(safe-area-inset-bottom));
+          background: var(--panel-1);
+        }
+        .app-shell.is-voice-view .screen-share-publish-settings {
+          padding: 6px;
+          font-size: 11px;
+        }
+        .kriptta-mobile-participants {
+          flex: 1 1 auto;
+          padding: 12px;
+          overflow-y: auto;
+          min-height: 110px;
+        }
+        .kriptta-mobile-participants h3 { font-size: 14px; margin: 0 0 10px; }
+        .kriptta-mobile-participant-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+          gap: 10px;
+        }
+        .kriptta-mobile-participant {
+          display: flex;
+          min-height: 120px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          padding: 12px 8px;
+          border-radius: 12px;
+          border: 1px solid var(--line);
+          background: var(--panel-3);
+          text-align: center;
+        }
+        .kriptta-mobile-avatar {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          font-weight: 800;
+          font-size: 24px;
+          background: var(--panel-4);
+        }
+        .kriptta-mobile-participant strong { font-size: 12px; overflow-wrap: anywhere; }
+        .kriptta-mobile-participant span { font-size: 11px; color: var(--muted); }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
